@@ -1,0 +1,134 @@
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.hestia-blog-featured-card .card-background {
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    min-height: 450px; /* Increased height */
+}
+
+.card-background {
+    background-position: center center;
+    background-size: cover;
+}
+
+.card {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    overflow: hidden;
+    max-width: 1200px; /* or whatever width you want */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hestia-blog-featured-card .card-background::after {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    left: 0;
+    top: 0;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.56);
+    opacity: 1;
+}
+
+.card-body {
+    position: relative;
+    z-index: 2;
+    padding: 40px 30px; /* More padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.category.text-info a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card-title {
+    font-size: 32px;
+    margin: 20px 0 15px;
+    color: #fff;
+}
+
+.card-description {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #eee;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hestia-blog-featured-card .card-body .colored-button {
+    z-index: 3;
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #00bcd4 !important; /* Blue background */
+    color: #fff !important; /* White text */
+    text-decoration: none !important;
+    text-shadow: none !important; /* Crucial for removing white appearance */
+    border-radius: 4px;
+    font-size: 16px;
+    width: 150px;
+    margin: 20px auto 0;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Explicitly define the hover state */
+.hestia-blog-featured-card .card-body .colored-button:hover {
+    background-color: #0097a7 !important; /* A slightly darker blue for hover */
+    transform: translateY(-2px);
+}
+
+
+</style>
+
+<article class="hestia-blog-featured-card post-376 post type-post status-publish format-standard has-post-thumbnail hentry category-ekkosense category-uncategorized col-md-12">
+    <div class="card card-raised card-background" id="Kard1">
+        <div class="card-body">
+            <span class="category text-info">
+                <a href="https://delicate-lightning.localsite.io/category/ekkosense/" title="View all posts in Ekkosense" rel="tag">Ekkosense</a>
+            </span>
+            <a href="https://delicate-lightning.localsite.io/ekkosense-tested/" rel="bookmark">
+                <h2 class="card-title entry-title" id="h2.1"></h2>
+            </a>
+            <p class="card-description entry-summary" id="myParagraph">
+
+            </p>
+            <a href="https://delicate-lightning.localsite.io/ekkosense-tested/" class="colored-button">Read more</a>
+        </div>
+    </div>
+</article>
+<script>
+    const headertoo = "Ekkosense tested";
+    document.getElementById("h2.1").innerText = headertoo;
+    
+    const paragraf = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.";
+    document.getElementById("myParagraph").innerText = paragraf;
+
+    const bgImageUrl = "http://advancedatan.com/wp-content/uploads/2025/06/ES-WEB.png";
+    document.getElementById("Kard1").style.backgroundImage = `url(${bgImageUrl})`;
+</script>
