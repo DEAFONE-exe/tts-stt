@@ -1,23 +1,138 @@
-[0.00s -> 4.80s]  Looking at our current market position, I see several key opportunities to strengthen our
-[4.80s -> 6.96s]  theatre business and drive revenue growth.
-[7.92s -> 12.72s]  First, we need to diversify our revenue streams beyond traditional ticket sales.
-[13.60s -> 18.64s]  I'd recommend expanding our concession offerings to include local craft beers, specialty
-[18.64s -> 24.24s]  cocktails and premium food options. We're seeing competitors successfully implement
-[24.24s -> 29.84s]  dinon experiences, and our customer surveys consistently show demand for better food quality.
-[30.64s -> 37.12s]  Our pricing strategy also needs refinement. Dynamic pricing based on demand, showtime and
-[37.12s -> 43.52s]  seating location could optimize revenue per screening. Premium experiences like reserved seating,
-[43.52s -> 49.52s]  recliner chairs, and VIP sections with table service justify higher price points while improving
-[49.52s -> 55.12s]  customer satisfaction. Technology integration presents another major opportunity.
-[55.92s -> 60.16s]  We should invest in a robust mobile app that handles everything from ticket purchasing to
-[60.16s -> 65.44s]  concession pre-ordering. This reduces wait times and creates additional touch points for
-[65.44s -> 70.88s]  customer engagement and data collection. Event programming beyond regular movies could
-[70.88s -> 76.40s]  significantly boost our bottom line. Think private screenings for corporate events,
-[76.40s -> 81.76s]  birthday parties for kids, classic movie nights, and life sports viewing parties.
-[82.56s -> 86.64s]  These events typically command premium pricing and build community loyalty.
-[87.36s -> 94.24s]  Our facilities themselves need attention. Upgrading to premium seating, improving sound systems,
-[94.24s -> 98.08s]  and ensuring immaculate cleanliness directly impact customer retention.
-[98.96s -> 103.44s]  Word of mouth marketing from exceptional experiences is invaluable in this industry.
-[104.32s -> 109.92s]  Finally, we need a comprehensive loyalty program that rewards frequent visitors with discounts,
-[109.92s -> 115.84s]  exclusive previews, and special member events. This creates recurring revenue and valuable
-[115.84s -> 121.36s]  customer data for targeted marketing. The key is implementing these changes systematically
-[121.36s -> 126.08s]  while monitoring customer feedback and financial impact at each stage.
+[0.00s -> 6.00s]  If builders build houses the way programmers build software, the first woodpecker to come along would destroy civilization.
+[6.00s -> 11.12s]  It's true because when an experienced programmer sees a bug, they typically feel nothing and do nothing.
+[11.12s -> 15.44s]  Because fixing it will just create five more bugs. Unfortunately, not all bugs can be ignored,
+[15.44s -> 20.96s]  like when the oxygen tank for a polythirteen exploded, or when your production servers go down and cost your company money.
+[20.96s -> 27.12s]  Today's video might change your life, because you'll learn how to instrument, collect, and visualize telemetry data from your server.
+[27.12s -> 30.64s]  Thanks to the magic of open telemetry and the LGTM stack.
+[30.64s -> 35.92s]  Not only will this help you visualize and detect anomalies in your software if you self-host on your own VPS,
+[35.92s -> 40.72s]  but most importantly, these beautiful data visualizations will make your boss think you're highly productive.
+[40.72s -> 43.44s]  To get started, there are five technologies we need to learn.
+[43.44s -> 47.20s]  Open telemetry, Grafana, Prometheus, Tempo, and Loki.
+[47.20s -> 49.68s]  It sounds intimidating, but it's easier than you think.
+[49.68s -> 51.92s]  Let's put 60 seconds on the clock to learn them.
+[51.92s -> 56.72s]  Open telemetry is an industry standard framework that collects telemetry data from software,
+[56.80s -> 62.64s]  things like metrics, logs, and traces, while being vendor agnostic, so it works with any programming language.
+[62.64s -> 65.68s]  But to use it, you need a backend to store and visualize the data.
+[65.68s -> 67.52s]  And that's where LGTM comes in.
+[67.52s -> 71.36s]  G is for Grafana, and it's the front end UI where you can visualize your data.
+[71.36s -> 75.36s]  You can also set up alerts, create dashboards, and waste thousands of hours here.
+[75.36s -> 79.44s]  Then P is for Prometheus, and it's a time series database for storing metrics.
+[79.44s -> 83.92s]  It's for Tempo, and it's a database for storing traces, while L is for Loki,
+[83.92s -> 85.60s]  a database for storing logs.
+[85.60s -> 89.28s]  Metrics, traces, and logs are the whole latrinity of software observability.
+[89.28s -> 93.36s]  A metric consists of multiple data points over time, like CPU usage.
+[93.36s -> 97.68s]  A trace tracks the flow of requests across multiple services to pinpoint bottlenecks,
+[97.68s -> 99.36s]  and of course logs are logs.
+[99.36s -> 104.24s]  Collectively, this forms the O-TEL-L-G-T-M stack, where data is collected with open telemetry,
+[104.24s -> 107.12s]  stored in these databases, and visualized with Grafana.
+[107.12s -> 109.12s]  If that all sounds complicated, don't worry.
+[109.12s -> 111.52s]  I thought I was too stupid to host something like this myself,
+[111.52s -> 114.40s]  but over the next few minutes, we'll have our own telemetry framework
+[114.40s -> 115.92s]  up and running like a true professional.
+[115.92s -> 119.28s]  The first thing we'll need is a server, and today we'll be using Hostinger,
+[119.28s -> 120.72s]  the sponsor of today's video.
+[120.72s -> 122.96s]  They provide a wide range of hosting services,
+[122.96s -> 126.96s]  and in our case, a Linux virtual private server that's perfect for this project.
+[126.96s -> 129.12s]  And currently, they're running their biggest sale of the year,
+[129.12s -> 131.20s]  which will last until the 15th of February.
+[131.20s -> 136.56s]  The KVM2 plan that I'm using here today is available at $5.99 per month for 24 months.
+[136.56s -> 141.44s]  A massive discount of 67%, and an incredible price for the amount of horsepower you get.
+[141.52s -> 143.76s]  Two CPUs and eight gigabytes of RAM.
+[143.76s -> 147.60s]  On top of that, FireShip viewers get an additional 10% off using the discount code
+[147.60s -> 149.76s]  FireShip, but now that we know where to get a server,
+[149.76s -> 152.08s]  we need to deploy the LGTM back end.
+[152.08s -> 154.88s]  Luckily, we won't have to install every component individually,
+[154.88s -> 157.68s]  and instead can use this Docker image provided by Grafana.
+[157.68s -> 160.08s]  If you're not already familiar with Docker, check out this video,
+[160.08s -> 161.52s]  but you don't have to be an expert,
+[161.52s -> 164.88s]  because we can spin up a server on Hostinger with Docker pre-installed.
+[164.88s -> 167.44s]  It'll first bring you to a setup page that looks like this.
+[167.44s -> 168.88s]  In fact, now that we're on this page,
+[168.88s -> 171.12s]  you'll notice how we can self-host almost anything here.
+[171.12s -> 174.64s]  Like WordPress, Coolify, Superbase, Aplane Linux server,
+[174.64s -> 177.04s]  or in our case, we'll go with the base Docker server,
+[177.04s -> 180.08s]  which itself is just Ubuntu with Docker pre-installed.
+[180.08s -> 183.52s]  After we go ahead and set that up, we'll have the option to set up SSH keys,
+[183.52s -> 184.88s]  which I would highly recommend doing.
+[184.88s -> 188.08s]  But for now, all you really need is a password for the root Linux user.
+[188.08s -> 189.68s]  Now, once the server is up and running,
+[189.68s -> 191.36s]  we can go to the management dashboard,
+[191.36s -> 194.40s]  and you'll find instructions on how to connect with SSH,
+[194.40s -> 195.44s]  or secure Shell.
+[195.44s -> 197.28s]  You'd go ahead and copy your IP address,
+[197.28s -> 198.56s]  then open up the terminal,
+[198.64s -> 202.48s]  and run SSH root, which is the user at that IP.
+[202.48s -> 205.76s]  And now we have admin access to the mainframe of our Hostinger server.
+[205.76s -> 207.76s]  At this point, we can run the Docker command
+[207.76s -> 210.32s]  to verify that the Docker demon is alive and well.
+[210.32s -> 211.04s]  Looks good.
+[211.04s -> 214.40s]  Now, let's go ahead and run the Docker image for Hotel LGTM.
+[214.40s -> 217.60s]  On the first run, that'll take a minute to pull the Docker image from the cloud.
+[217.60s -> 220.32s]  But eventually, you should have Grafana running on localhost.
+[220.32s -> 223.92s]  Now, open up the browser and go to your IP address on port 3000,
+[223.92s -> 226.48s]  and you should be able to log into Grafana as admin.
+[226.64s -> 229.36s]  Congratulations, you're now running the LGTM stack.
+[229.36s -> 231.44s]  Everything looks good to me, but one disclaimer
+[231.44s -> 234.08s]  is that this Docker image is not intended for production,
+[234.08s -> 237.20s]  but it is a great way to learn and experiment with these technologies.
+[237.20s -> 239.04s]  But Grafana on its own is useless,
+[239.04s -> 241.04s]  unless you have it connected to a data source.
+[241.04s -> 242.48s]  As you can see under connections,
+[242.48s -> 245.36s]  there's all kinds of different ways we can connect to data in the cloud.
+[245.36s -> 247.84s]  But in this case, we already have connections for low-key,
+[247.84s -> 248.96s]  Prometheus, and Tempo.
+[248.96s -> 251.04s]  We just need to populate them with some data.
+[251.04s -> 253.12s]  The best way to do that is to run an application
+[253.12s -> 254.80s]  with your favorite language and framework.
+[254.80s -> 256.40s]  For me, recently, that's been Dino
+[256.40s -> 257.84s]  to run TypeScript on the server.
+[257.84s -> 260.48s]  The Fireship Pro members have a full course for that as well,
+[260.48s -> 262.16s]  but one feature you may not know about
+[262.16s -> 263.76s]  is it's built-in telemetry support.
+[263.76s -> 264.96s]  If you build a server with Dino,
+[264.96s -> 267.36s]  it'll automatically run traces on your server,
+[267.36s -> 269.04s]  and will also collect all the console logs
+[269.04s -> 270.48s]  you forgot to remove from your code.
+[270.48s -> 271.52s]  But in addition to that,
+[271.52s -> 274.16s]  you can also create your own custom traces and metrics.
+[274.16s -> 276.32s]  Like maybe I want to create a metric in Prometheus
+[276.32s -> 278.24s]  that tracks the average request time.
+[278.24s -> 281.04s]  Well, I can do that with open telemetry by creating a meter
+[281.04s -> 282.56s]  then I can send data to that meter
+[282.56s -> 284.24s]  for whatever code handles a request,
+[284.32s -> 287.12s]  or it could define a tracer to track the lifecycle of a function.
+[287.12s -> 288.80s]  Like in this case, I'm creating a span
+[288.80s -> 290.40s]  that wraps a database query,
+[290.40s -> 292.08s]  which would allow us to keep track of errors
+[292.08s -> 293.12s]  and other anomalies.
+[293.12s -> 296.24s]  Pretty cool, but now it's time to run this Dino app on my server.
+[296.24s -> 297.84s]  I have Dino installed here already,
+[297.84s -> 300.32s]  is so I just run the Dino run command on this file.
+[300.32s -> 302.24s]  And now I can access this web application
+[302.24s -> 304.08s]  on our IP address at port 8000.
+[304.08s -> 306.40s]  And you'll see that usually we get a successful request,
+[306.40s -> 308.08s]  but every once in a while we get an error.
+[308.08s -> 310.40s]  Without telemetry, we'd have to wait for our users
+[310.40s -> 312.00s]  to send us angry emails,
+[312.08s -> 314.32s]  and then dig through our server logs to find the error.
+[314.32s -> 316.24s]  But now thanks to the LGTM stack,
+[316.24s -> 317.84s]  we can just go straight into Grafana
+[317.84s -> 319.20s]  and analyze everything there.
+[319.20s -> 321.84s]  Let's click on explore and first check out the logs.
+[321.84s -> 323.44s]  The data source here is Loki,
+[323.44s -> 326.32s]  and you'll notice that we have a large number of error logs.
+[326.32s -> 328.96s]  We can then filter them and start to figure out where they're coming from.
+[328.96s -> 331.20s]  If we go to metrics, we can see all kinds of data
+[331.20s -> 333.28s]  automatically being collected for Prometheus
+[333.28s -> 336.16s]  and Prometheus has its own query language that we can use as well.
+[336.16s -> 338.64s]  And then finally, we can go to Tempo to look at traces,
+[338.64s -> 340.48s]  which provides a node graph and histogram
+[340.48s -> 341.84s]  for the performance on our server.
+[341.92s -> 343.60s]  And that's really just the tip of the iceberg.
+[343.60s -> 345.20s]  When deploying a telemetry back end,
+[345.20s -> 346.88s]  you also need to think about security.
+[346.88s -> 348.88s]  But luckily, since we deployed to Hostinger,
+[348.88s -> 351.68s]  their Vanguard DDoS filtering and firewall config
+[351.68s -> 354.00s]  will help guard against harmful traffic and threats.
+[354.00s -> 356.08s]  Let me know if you want to see more tutorials like this.
+[356.08s -> 358.48s]  Thanks for watching, and I will see you in the next one.

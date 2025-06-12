@@ -1,5 +1,6 @@
 from faster_whisper import WhisperModel
 import ollama
+import re
 
 # Load the model (use "base", "small", "medium", or "large")device="cuda"
 #model = WhisperModel("base", compute_type="float16")
@@ -7,7 +8,7 @@ model = WhisperModel("base", device="cpu")
 
 # Transcribe the audio file
 segments, info = model.transcribe(
-    "../output-ms1.wav",
+    "../yt-video.mp3",
     language="en",
     beam_size=5,
     vad_filter=True,
@@ -40,7 +41,8 @@ with open("transcription.txt", "r", encoding="utf-8") as f:
                 "Always respond with emojis to make it engaging 🧠✨. Be casual, friendly, and concise."
             )
         }, {
-            'role': 'user', 'content': f"These are what someone said during a meeting and have the possibility of being impartial:\n\n{text} \n\n now summarize the notes"
+            #'role': 'user', 'content': f"This is a transcript of what someone said during a meeting and have the possibility of being impartial:\n\n{text} \n\n You should ignore the timestamps. Now summarize it"
+            'role': 'user', 'content': f"This is a transcript from an online video guide from youtube:\n\n{text} \n\n You should ignore the timestamps. Now summarize it"
         }],
         stream=True  # Set to True for streaming responses
     )
@@ -51,3 +53,13 @@ for chunk in response:
     content = chunk.get('message', {}).get('content', '')
     output += content
     print(content, end='', flush=True)
+
+final_answer = re.sub(r'<think>.*?</think>', # We're searching for think tags
+                          '', # We'll replace them with empty spaces
+                          output, # In response_content
+                          flags=re.DOTALL).strip() # (dot) should match newlines (\n) as well.
+
+final_answer = re.sub(r'\*{2}(.*?)\*{2}', r'\1', final_answer)  # Remove **bold** formatting
+
+with open("finalnotes.txt", "w", encoding="utf-8") as f:
+    f.write(final_answer)        # write to file

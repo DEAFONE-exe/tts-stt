@@ -1,0 +1,27 @@
+Certainly! Here's a concise and organized summary of the provided transcript:
+
+---
+
+Summary: Using the LGTM Stack with Grafana and Prometheus
+
+1. Setting Up Tools:
+   - Use Dino for applications, Hostinger for servers, and other relevant services for backend infrastructure.
+
+2. LGTM Stack (Linux General Purpose Telemetry Machine):
+   - Combine Grafana for real-time data analytics.
+   - Utilize Prometheus for monitoring data streams and systems.
+
+3. Video Analysis:
+   - Capture logs with Loki in the browser to explore server performance and errors.
+   - Analyze error logs from Loki via Tempor to identify root causes.
+
+4. Application Integration:
+   - Run applications using Dino on your Hostinger server for efficient integration with Grafana.
+
+5. Notes on Integration:
+   - Deploy to Hostinger, which ensures LGTM stack coverage.
+   - Use Vanguard DDoS filtering and firewall settings on Hostinger to secure the environment.
+
+---
+
+This summary captures the essential aspects of setting up and using the LGTM stack with Grafana and Prometheus.
