@@ -1,8 +1,9 @@
 [0.00s -> 6.00s]  If builders build houses the way programmers build software, the first woodpecker to come along would destroy civilization.
 [6.00s -> 11.12s]  It's true because when an experienced programmer sees a bug, they typically feel nothing and do nothing.
 [11.12s -> 15.44s]  Because fixing it will just create five more bugs. Unfortunately, not all bugs can be ignored,
-[15.44s -> 20.96s]  like when the oxygen tank for a polythirteen exploded, or when your production servers go down and cost your company money.
-[20.96s -> 27.12s]  Today's video might change your life, because you'll learn how to instrument, collect, and visualize telemetry data from your server.
+[15.44s -> 20.96s]  like when the oxygen tank for a polythirteen exploded or when your production servers go down and cost your company money.
+[20.96s -> 24.24s]  Today's video might change your life because you'll learn how to instrument,
+[24.24s -> 27.12s]  collect, and visualize telemetry data from your server.
 [27.12s -> 30.64s]  Thanks to the magic of open telemetry and the LGTM stack.
 [30.64s -> 35.92s]  Not only will this help you visualize and detect anomalies in your software if you self-host on your own VPS,
 [35.92s -> 40.72s]  but most importantly, these beautiful data visualizations will make your boss think you're highly productive.

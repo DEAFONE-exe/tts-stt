@@ -1,27 +1,20 @@
-Certainly! Here's a concise and organized summary of the provided transcript:
+The tutorial guides you through setting up an open-telemetry stack (including Prometheus, Tempo, Grafana, and Loki) on a Dino app using Hostinger's VPS. Here's the summary:
 
----
+1. Components of LGTM Stack:
+   - Open Telemetry: Collects server metrics like CPU usage and memory.
+   - Prometheus: Aggregates and visualizes metrics via GraphQL queries.
+   - Tempo: Tracks application traces for performance analysis.
+   - Grafana: Displays data sources in a dashboard, including logs, metrics, and traces.
 
-Summary: Using the LGTM Stack with Grafana and Prometheus
+2. Setup Steps:
+   - Install open-telemetry-collector on the server with Prometheus.
+   - Configure each component to work together using Dino's automatic telemetry collection.
 
-1. Setting Up Tools:
-   - Use Dino for applications, Hostinger for servers, and other relevant services for backend infrastructure.
+3. Benefits of Telemetry:
+   - Errors are detected immediately via Grafana logs instead of user reports.
+   - Metrics and traces provide insights into application performance.
+   - Logs help trace error origins, aiding troubleshooting without digging through server logs.
 
-2. LGTM Stack (Linux General Purpose Telemetry Machine):
-   - Combine Grafana for real-time data analytics.
-   - Utilize Prometheus for monitoring data streams and systems.
+4. Security: The hosting provider (Hostinger) offers Vanguard DDoS protection to safeguard against threats.
 
-3. Video Analysis:
-   - Capture logs with Loki in the browser to explore server performance and errors.
-   - Analyze error logs from Loki via Tempor to identify root causes.
-
-4. Application Integration:
-   - Run applications using Dino on your Hostinger server for efficient integration with Grafana.
-
-5. Notes on Integration:
-   - Deploy to Hostinger, which ensures LGTM stack coverage.
-   - Use Vanguard DDoS filtering and firewall settings on Hostinger to secure the environment.
-
----
-
-This summary captures the essential aspects of setting up and using the LGTM stack with Grafana and Prometheus.
+This setup is ideal for learning but not recommended for production due to potential limitations.

@@ -5,7 +5,7 @@ with open("transcription.txt", "r", encoding="utf-8") as f:
 
 # Stream the response from Ollama model
     response = ollama.chat(
-        model='deepseek-r1:1.5b',
+        model='deepseek-r1:7b',
         messages=[{
             'role': 'system', 'content': (
                 "Use ONLY the given content to answer the user's question. "
@@ -16,7 +16,7 @@ with open("transcription.txt", "r", encoding="utf-8") as f:
                 "Always respond with emojis to make it engaging 🧠✨. Be casual, friendly, and concise."
             )
         }, {
-            'role': 'user', 'content': f"Read this text:\n\n{text} \n\n now summarize what you have read"
+            'role': 'user', 'content': f"This text is a transcript from a meeting which have the possiblity of being impartial or incomplete:\n\n{text} \n\n You should ignore the timestamps. Now summarize it"
         }],
         stream=True  # Set to True for streaming responses
     )
