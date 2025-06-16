@@ -37,12 +37,12 @@ response = ollama.chat(
             "Do NOT make assumptions or fabricate information. "
             "Use bullet points or numbered lists for clarity and readability. "
             "Avoid redundant explanations — if something is implied (e.g., no number means no call), don't restate it. "
-            "Respond in a clear, concise, and well-formatted manner. "
+            "Respond in a clear, and well-formatted manner. "
             "Always respond with emojis to make it engaging 🧠✨. Be casual, friendly, and concise."
         )
     }, {
         #'role': 'user', 'content': f"This is a transcript of what someone said during a meeting and have the possibility of being impartial:\n\n{text} \n\n You should ignore the timestamps. Now summarize it"
-        'role': 'user', 'content': f"This is a transcript from an online video guide from youtube:\n\n{text} \n\n You should ignore the timestamps. Now summarize it"
+        'role': 'user', 'content': f"This is a transcript from an online video from youtube:\n\n{text} \n\n You should ignore the timestamps. Now summarize it. You do not have to make it short"
     }],
     stream=True  # Set to True for streaming responses
 )

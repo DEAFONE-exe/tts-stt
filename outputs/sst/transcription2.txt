@@ -1,0 +1,2 @@
+[0.00 -> 4.96]  restoring metrics. T is for tempo, and it's a database for storing traces, while L is for
+[4.96 -> 9.92]  loci, a database for storing logs. Metrics, traces, and blogs are the holy trinity of software.

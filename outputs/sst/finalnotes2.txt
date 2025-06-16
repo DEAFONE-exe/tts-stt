@@ -1,0 +1,20 @@
+The video demonstrates setting up an automated monitoring system using the LGTM stack (Grafana, Prometheus, Promo, Tempore) via Dino on a hosted server. Here's a concise summary:
+
+1. **Setup Tools**:
+   - **Dino**: A TypeScript framework built with Vite that automatically collects metrics due to Open Telemetry.
+   - **Hostinger VPS**: Provides the hosting environment with Vanguard DDoS protection.
+
+2. **Components**:
+   - **Grafana**: Used for data visualization, connected as a data source to Prometheus.
+   - **Prometheus**: A monitoring tool collecting metrics from various sources.
+   - **Promo (Prometheus Extended)**: Enhances monitoring capabilities with features like traces and anomaly detection.
+   - **Tempore**: Tracks function call traces for performance insights.
+
+3. **Process**:
+   - Dino automatically collects metrics on the server without extra code due to built-in telemetry support.
+   - Prometheus aggregates these metrics, and Tempore tracks performance traces.
+   - Grafana visualizes data through logs, metrics, and traces, providing a comprehensive monitoring dashboard.
+
+4. **Security**: The setup includes Vanguard DDoS protection from Hostinger to safeguard against threats.
+
+This tutorial is ideal for anyone looking to monitor application performance and anomalies efficiently with minimal setup.

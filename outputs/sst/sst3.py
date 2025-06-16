@@ -2,18 +2,26 @@ import sounddevice as sd
 from scipy.io.wavfile import write
 import numpy as np
 
-def record_audio(filename="output.wav", duration=5, sample_rate=16000):
-    print(f"Recording for {duration} seconds...")
-    audio = sd.rec(int(duration * sample_rate), samplerate=sample_rate, channels=1, dtype='int16')
+
+def record_audio(filename="output.wav", duration=5, sample_rate=16000, device=1): #16000
+    print(f"Recording for {duration} seconds from device #{device}...")
+    audio = sd.rec(
+        int(duration * sample_rate),
+        samplerate=sample_rate,
+        channels=1,
+        dtype='int16',
+        device=device
+    )
     sd.wait()
     write(filename, sample_rate, audio)
     print(f"Saved recording to {filename}")
 
 
+
 from faster_whisper import WhisperModel
 
-def transcribe_audio(filename="output.wav", model_size="base"):
-    model = WhisperModel(model_size, device="cpu")  # or "float16" / "int8_float16"
+def transcribe_audio(filename="mic_input.wav", model_size="base"):
+    model = WhisperModel(model_size, device="cuda")  # or "float16" / "int8_float16"
     segments, _ = model.transcribe(filename)
 
     print("Transcription:")
@@ -23,5 +31,5 @@ def transcribe_audio(filename="output.wav", model_size="base"):
 
 
 
-record_audio("mic_input.wav", duration=10)
+record_audio("mic_input.wav", duration=10, device=1)
 transcribe_audio("mic_input.wav", model_size="base")

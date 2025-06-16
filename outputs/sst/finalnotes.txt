@@ -1,20 +1,28 @@
-The tutorial guides you through setting up an open-telemetry stack (including Prometheus, Tempo, Grafana, and Loki) on a Dino app using Hostinger's VPS. Here's the summary:
+The tutorial outlines the process of setting up the LGTM stack (Open Telemetry, Prometheus, Tempo, and Grafana) using Docker on a server hosted by Hostinger. Here's a detailed summary:
 
-1. Components of LGTM Stack:
-   - Open Telemetry: Collects server metrics like CPU usage and memory.
-   - Prometheus: Aggregates and visualizes metrics via GraphQL queries.
-   - Tempo: Tracks application traces for performance analysis.
-   - Grafana: Displays data sources in a dashboard, including logs, metrics, and traces.
+1. Introduction to the Stack:
+   - The LGTM stack consists of Open Telemetry for collecting metrics, Prometheus as the backend service for time-series data storage, Tempo for tracing applications, and Grafana for visualization.
+   - It's ideal for learning due to its simplicity but is not production-ready as the Docker image isn't designed for production use.
 
-2. Setup Steps:
-   - Install open-telemetry-collector on the server with Prometheus.
-   - Configure each component to work together using Dino's automatic telemetry collection.
+2. Deployment Process:
+   - Installation begins by running Docker commands to install components: Open Telemetry (OT) as a background process on any language, Prometheus for metrics storage, and Tempas for traces.
+   - Configuration steps involve connecting these services via their respective APIs within the Docker setup.
 
-3. Benefits of Telemetry:
-   - Errors are detected immediately via Grafana logs instead of user reports.
-   - Metrics and traces provide insights into application performance.
-   - Logs help trace error origins, aiding troubleshooting without digging through server logs.
+3. Connecting Data Sources:
+   - Utilizes Dino, an open-source framework with TypeScript support, to build web applications automatically collecting telemetry data and logs on a server.
+   - Example: A Dino app running at `http://localhost:8000` collects metrics like average request time and tracks application lifecycle events.
 
-4. Security: The hosting provider (Hostinger) offers Vanguard DDoS protection to safeguard against threats.
+4. Extending Prometheus:
+   - Explains how custom metrics can be added using meters or tracers within Dino, demonstrating flexibility in data collection.
+   - Example includes tracking errors by filtering log data provided by Loki (logs source).
 
-This setup is ideal for learning but not recommended for production due to potential limitations.
+5. Grafana Integration:
+   - Shows how Prometheus data is stored and displayed in Grafana, allowing real-time monitoring of metrics like request duration.
+
+6. Deployment Considerations:
+   - Security aspect mentions Hostinger's Vanguard features to protect against DDoS threats and other security risks.
+
+7. Conclusion:
+   - Highlights the tutorial as a great learning resource, inviting further content for more tutorials on similar topics.
+
+This structured approach ensures clarity in explaining each component of the LGTM stack setup, its extensions, and deployment considerations.
